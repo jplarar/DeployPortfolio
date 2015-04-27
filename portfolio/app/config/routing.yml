@@ -1,0 +1,3 @@
+manatee_core:
+    resource: "@PortfolioCoreBundle/Resources/config/routing.yml"
+    prefix:   /

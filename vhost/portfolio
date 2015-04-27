@@ -1,0 +1,12 @@
+<VirtualHost *:80>
+ServerName      portfolio.localdev.com
+ServerAdmin     admin@localdev.com
+ServerSignature email
+DocumentRoot    /var/www/portfolio/web
+RewriteEngine   On
+<Directory /var/www/portfolio/web>
+AllowOverride   All
+</Directory>
+#CustomLog       logs/portfolio.access.log combined
+#ErrorLog        logs/portfolio.error.log
+</VirtualHost>
