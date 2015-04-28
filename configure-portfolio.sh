@@ -4,10 +4,10 @@ echo "-> Fix permissions"
 sudo chmod 777 -R /var/www/portfolio
 
 echo "-> Create src directories"
-mkdir /var/www/porfolio/src/Portfolio
+mkdir /var/www/portfolio/src/Portfolio
 
 echo "-> Register Symlinks"
-ln -s /media/sf_github/Portfolio/PortfolioCoreBundle /var/www/wolf/admin/src/Portfolio/CoreBundle
+ln -s /media/sf_github/Portfolio/PortfolioCoreBundle /var/www/portfolio/src/Portfolio/CoreBundle
 
 echo "-> Enable VirtualHost"
 sudo cp vhost/portfolio /etc/apache2/sites-available/portfolio
@@ -32,8 +32,5 @@ echo "--> Clear cache"
 sudo chmod 777 -R app/cache
 sudo php app/console cache:clear --env=dev # bug
 sudo chmod 777 -R app/cache
-
-echo "--> Update database"
-php app/console doctrine:schema:update --force
 
 cd ..

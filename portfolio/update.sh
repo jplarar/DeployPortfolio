@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 echo - Update packages with composer -
 php composer.phar self-update
 sudo php composer.phar update # bug
