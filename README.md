@@ -30,4 +30,3 @@ The installation should only ask for your root password once to download package
 ## Installation Order
 1. LAMP stack
 2. Symfony
-3. Angular apps
