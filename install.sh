@@ -46,17 +46,23 @@ echo -e "\e[1m--- Configure Apache & Virtual Hosts ---\e[0m"
 echo - Prepare log files -
 sudo mkdir /etc/apache2/logs
 sudo chmod 777 -R /etc/apache2/logs
-
-echo - Disable Default Virtual Hosts -
-sudo a2dissite 000-default
+sudo cp vhost/portfolio.conf /etc/apache2/sites-available/portfolio.conf
+sudo a2ensite portfolio
 sudo service apache2 restart
 
-echo - Install VirtualHosts--
-sudo chmod 777 -R /etc/apache2/logs
-
-sudo chmod 777 -R /var/www
-
 echo -e "\e[1m--- File permissions ---\e[0m"
-sudo chmod +x configure-portfolio.sh
+    chmod +x update.sh
+    chmod +x install.sh
+
+    sudo chmod 777 -R /var/www
+
+    echo -e "\e[1m--- Install Applications ---\e[0m"
+    for i in "portfolio"
+    do
+        cd ${i}
+        curl -sS https://getcomposer.org/installer | php
+        cd ..
+    done
+
 
 echo "[All Done]"
