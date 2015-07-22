@@ -33,4 +33,8 @@ sudo chmod 777 -R app/cache
 sudo php app/console cache:clear --env=dev # bug
 sudo chmod 777 -R app/cache
 
+echo "--> Create database"
+sudo php app/console doctrine:database:create --froce
+sudo php app/console doctrine:schema:update --force
+
 cd ..

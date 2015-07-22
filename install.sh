@@ -64,5 +64,9 @@ echo -e "\e[1m--- File permissions ---\e[0m"
         cd ..
     done
 
+echo -e "\e[1m--- Configure Potafolio ---\e[0m"
+
+sudo chmod +x configure-portfolio.sh
+sudo ./configure-portfolio.sh
 
 echo "[All Done]"
